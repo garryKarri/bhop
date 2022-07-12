@@ -1,0 +1,62 @@
+<script defer src='/js/admin/admin.js'></script>
+
+<div id='adminPage'>
+
+  <br />
+  <div style="display:flex; justify-content:center">
+    <div class='btn-group' role='group' aria-label='...'>
+      <a id='addAdminButton' href="/admin/add" class="btn btn-outline-dark">Добавить новое место</a>
+      <a href='/admin/lc' class='btn btn-outline-dark'>Панель Админа</a>
+    </div>
+  </div>
+
+  <div id='addAdminButtonContainer'> </div>
+
+  <div id='addAdminFormContainer'>
+
+    <div style='display:flex; justify-content: center; flex-wrap: wrap'>
+      {{#each bars}}
+        <div
+          class='fullwrap'
+          style='box-shadow: 2px 2px 50px 11px rgba(34, 60, 80, 0.2); margin: 20px'
+        >
+          <img
+            src='/img/{{bar_photo_name}}'
+            style='width:400px; height:300px; object-fit:cover; border-radius:5px; '
+          />
+          <div
+            class='fullcap'
+            style='padding:10px; display:flex; flex-direction:column; justify-content:space-around'
+          >
+            <div style='font-size:30px'>{{bar_title}}</div>
+
+            <hr />
+
+            <div style='font-size:20px'>{{bar_type}}</div>
+
+            <br>
+
+            <div style='font-size:15px'>{{bar_city}}</div>
+            <div style='font-size:15px'>{{bar_street}}, {{bar_house}}</div>
+
+            <div style='font-size:15px'>Средний чек: {{bar_price}}</div>
+
+            <br />
+
+            <div style='display:flex; justify-content:space-around'>
+              <a
+                href='/admin/change/{{id}}'
+                class='btn btn-outline-light'
+              >Изменить</a>
+              <a
+                href='/admin/delete/{{id}}'
+                class='btn btn-outline-light'
+              >Удалить</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<nav class='navbar sticky-top navbar-expand-lg navbar-dark bg-dark'>
+  <div class='container-fluid' style='display:flex; justify-content:space-around'>
+    <div style='margin:0 30px'>
+      <a class='navbar-brand' href='/'>Bar Hopping</a>
+    </div>
+
+    <div style='margin:0'>
+      <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+        <li class='nav-item'>
+          <a class='nav-link active' aria-current='page' href='/map'>
+            Карта
+          </a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link active' aria-current='page' href='/chat'>
+            С кем пойти?
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div style='margin:0 30px'>
+
+      {{#if isUser}}
+        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+          {{#if isAdmin}}
+            <li class='nav-item'>
+              <a class='nav-link active' aria-current='page' href='/admin' style="color:brown">
+                <b>Админ</b>
+              </a>
+            </li>
+          {{/if}}
+          {{#if isUser}}
+            <li class='nav-item'>
+              <a
+                class='nav-link active'
+                aria-current='page'
+                href='/profile/page/{{user_name}}'
+              >
+                {{user_name}}
+              </a>
+            </li>
+          {{/if}}
+          <li>
+            <a
+              class='nav-link active'
+              aria-current='page'
+              style='color:gray; text-decoration: none; margin:0 10px'
+              href='/form/logout'
+            >Выйти</a>
+          </li>
+        </ul>
+      {{else}}
+        <a
+          style='color:gray; text-decoration: none; margin:0 10px'
+          href='/form/login'
+        >Вход</a>
+        <a
+          style='color:gray; text-decoration: none; margin:0 10px'
+          href='/form/reg'
+        >Регистрация</a>
+      {{/if}}
+
+    </div>
+  </div>
+</nav>

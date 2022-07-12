@@ -1,0 +1,27 @@
+<div style='display:flex; justify-content:center; margin-top: 30px'>
+    <form
+      id='addForm'
+      action='/profile/add'
+      method='post'
+      enctype='multipart/form-data'
+      {{#if check}}
+        style='width:60vh; margin:0px ;padding:0px; box-shadow: 2px 2px 50px 11px rgba(208, 244, 191, 0.571); position:fixed; z-index: 100; border-radius:10px'
+      {{else}}
+        style='width:60vh; margin:0px ;padding:0px; box-shadow: 2px 2px 50px 11px rgba(245, 176, 164, 0.536); position:fixed; z-index: 100; border-radius:10px'
+      {{/if}}
+    >
+    <div 
+    {{#if check}}
+      class='alert alert-success' 
+    {{else}}
+      class='alert alert-danger'
+    {{/if}}
+    role='alert' style='margin:0; text-align:center'>
+      {{#if check}}
+      <b>{{user_name}}</b>, Ваши данные успешно обновлены!
+      {{else}}
+      <b>{{user_name}}</b>, к сожалению, {{message}}!
+      {{/if}}
+    </div>
+  </form>
+</div>

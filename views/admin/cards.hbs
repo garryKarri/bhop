@@ -1,0 +1,43 @@
+<div style='display:flex; justify-content: center; flex-wrap: wrap'>
+  {{#each bars}}
+    <div
+      class='fullwrap'
+      style='box-shadow: 2px 2px 50px 11px rgba(34, 60, 80, 0.2); margin: 20px'
+    >
+      <img
+        src='/img/{{bar_photo_name}}'
+        style='width:400px; height:300px; object-fit:cover; border-radius:5px;'
+      />
+      <div
+        class='fullcap'
+        style='padding:10px; display:flex; flex-direction:column; justify-content:space-around'
+      >
+        <div style='font-size:30px'>{{bar_title}}</div>
+
+        <hr />
+
+        <div style='font-size:20px'>{{bar_type}}</div>
+
+        <br>
+
+        <div style='font-size:15px'>{{bar_city}}</div>
+        <div style='font-size:15px'>{{bar_street}}, {{bar_house}}</div>
+
+        <div style='font-size:15px'>Средний чек: {{bar_price}}</div>
+
+        <br />
+
+        <div style='display:flex; justify-content:space-around'>
+          <a
+            href='/admin/change/{{id}}'
+            class='btn btn-outline-light'
+          >Изменить</a>
+          <a
+            href='/admin/delete/{{id}}'
+            class='btn btn-outline-light'
+          >Удалить</a>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

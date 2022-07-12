@@ -1,0 +1,111 @@
+<br />
+<div
+  style='position:sticky; top:0; left:0; width:100%; height:100%; z-index:99; background-color:gray'
+>
+
+  <div style='display:flex; justify-content:center;'>
+    <form
+      id='addAdminForm'
+      action='/admin/add'
+      method='post'
+      enctype='multipart/form-data'
+      style='width:60vh; padding:20px; box-shadow: 2px 2px 50px 11px rgba(34, 60, 80, 0.2); position:fixed; background-color:white; z-index: 100'
+    >
+      <div class='mb-3'>
+        <select
+          class='form-select'
+          aria-label='Default select example'
+          name='bar_type'
+          required
+        >
+          <option selected>Категория</option>
+          <option value='Кофейня'>Кофейня</option>
+          <option value='Ресторан'>Ресторан</option>
+          <option value='Бар'>Бар</option>
+        </select>
+      </div>
+      <div class='mb-3'>
+        <input
+          type='text'
+          class='form-control'
+          name='bar_title'
+          id='exampleFormControlInput1'
+          placeholder='Название'
+          autocomplete='off'
+          value='{{bar.bar_title}}'
+          required
+        />
+      </div>
+      <div class='mb-3' style='display:flex; justify-content:space-between'>
+        <input
+          type='text'
+          class='form-control'
+          name='bar_city'
+          id='exampleFormControlInput1'
+          placeholder='Город'
+          autocomplete='off'
+          value='{{bar.bar_city}}'
+          required
+        />
+        <input
+          type='text'
+          class='form-control'
+          name='bar_street'
+          id='exampleFormControlInput1'
+          style='margin:0 10px'
+          placeholder='Улица'
+          autocomplete='off'
+          value='{{bar.bar_street}}'
+          required
+        />
+        <input
+          type='number'
+          class='form-control'
+          name='bar_house'
+          style='appearance: none'
+          id='exampleFormControlInput1'
+          placeholder='Дом'
+          autocomplete='off'
+          value='{{bar.bar_house}}'
+          required
+        />
+      </div>
+      <div class='mb-3'>
+        <select
+          class='form-select'
+          aria-label='Default select example'
+          name='bar_price'
+          required
+        >
+          <option selected>Средний чек</option>
+          <option value='700-1000'>700-1000</option>
+          <option value='1000-1500'>1000-1500</option>
+          <option value='1500-1900'>1500-1900</option>
+          <option value='1900+'>1900+</option>
+        </select>
+      </div>
+      <div class='mb-3'>
+        <label for='formFileMultiple' class='form-label'>Добавить фото</label>
+        <input
+          class='form-control'
+          type='file'
+          id='formFileMultiple'
+          name='bar_photo'
+          multiple
+        />
+      </div>
+      <div style='display:flex; justify-content:space-between'>
+        {{#if addForm}}
+          <button type='submit' class='btn btn-outline-dark'>Добавить</button>
+        {{else}}
+          <button type='submit' class='btn btn-outline-dark'>Изменить</button>
+        {{/if}}
+        <a id='cancelButton' class='btn btn-outline-dark'>Отменить</a>
+      </div>
+    </form>
+  </div>
+
+</div>
+<div id='addError'>
+
+</div>

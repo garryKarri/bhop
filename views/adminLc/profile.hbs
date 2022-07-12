@@ -1,0 +1,115 @@
+<div
+  id='adminShowUsersContainer'
+  style='display:flex; justify-content:center; flex-wrap:wrap; margin:20px'
+>
+
+  <div
+    style='display:flex; justify-content:center; border:1px solid black; padding:20px; border-radius:5px;  box-shadow: 2px 2px 50px 11px rgba(34, 60, 80, 0.2); background-color:white;'
+  >
+    <form id='changeAdminProfile' method='post' action='/admin/lc/change' style='width:80vh'>
+      <div class='mb-3'>
+        <input
+          type='text'
+          class='form-control'
+          id='exampleInputEmail1'
+          aria-describedby='emailHelp'
+          name='user_name'
+          placeholder='Имя'
+          autocomplete='off'
+          value='{{user.user_name}}'
+        />
+      </div>
+      <div class='mb-3'>
+        <input
+          type='text'
+          class='form-control'
+          id='exampleInputEmail1'
+          aria-describedby='emailHelp'
+          name='user_email'
+          placeholder='Почта'
+          autocomplete='off'
+          value='{{user.user_email}}'
+        />
+      </div>
+      <div id='tempInfo'>
+        <hr />
+        <div class='mb-3'>
+          <div style='display:flex; justify-content:space-bewteen'>
+            <select
+              class='form-select'
+              aria-label='Default select example'
+              name='user_sex'
+              value='{{user.user_sex}}'
+            >
+              <option selected>Пол</option>
+              <option value='Мужской'>Мужской</option>
+              <option value='Женский'>Женский</option>
+              <option value='Панда'>Панда</option>
+            </select>
+            <input
+              type='text'
+              class='form-control'
+              style='margin-left:10px'
+              id='exampleInputEmail1'
+              aria-describedby='emailHelp'
+              name='user_age'
+              placeholder='Возраст'
+              autocomplete='off'
+              value='{{user.user_age}}'
+            />
+          </div>
+        </div>
+
+        <div class='mb-3'>
+          <div style='display:flex; justify-content:space-between'>
+            <input
+              type='text'
+              class='form-control'
+              id='exampleInputEmail1'
+              aria-describedby='emailHelp'
+              name='user_city'
+              placeholder='Город'
+              autocomplete='off'
+              value='{{user.user_city}}'
+            />
+            <input
+              type='text'
+              class='form-control'
+              style='margin:0 15px'
+              id='exampleInputEmail1'
+              aria-describedby='emailHelp'
+              name='user_street'
+              placeholder='Улица'
+              autocomplete='off'
+              value='{{user.user_street}}'
+            />
+            <input
+              type='number'
+              class='form-control'
+              id='exampleInputEmail1'
+              aria-describedby='emailHelp'
+              name='user_house'
+              placeholder='Дом'
+              autocomplete='off'
+              value='{{user.user_house}}'
+            />
+          </div>
+        </div>
+      </div>
+      <br />
+      <div style='display:flex; justify-content:center'>
+        <a id='changePasswordButton' href='/admin/lc/change/password/{{user_id}}' class='btn btn-outline-dark' style='margin:0 30px'>Изменить
+          пароль</a>
+        <button
+          type='submit'
+          class='btn btn-outline-dark'
+          style='margin:0 30px'
+        >Изменить данные</button>
+        <a id='cancelButton2' class='btn btn-outline-dark' style='margin:0 30px'>Отменить</a>
+      </div>
+    </form>
+  </div>
+
+  <div id="chagnePasswordFormContainer"></div>
+
+</div>

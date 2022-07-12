@@ -1,0 +1,158 @@
+<script defer src='/js/form/reg.js'></script>
+
+<br />
+
+<div style='display:flex; justify-content:center'>
+  <form id='regForm' method='post' action='/form/reg' style='width:50vh'>
+    <div class='mb-3'>
+      <input
+        type='text'
+        class='form-control'
+        id='exampleInputEmail1'
+        aria-describedby='emailHelp'
+        name='user_name'
+        placeholder='Имя'
+        autocomplete='off'
+      />
+    </div>
+    <div class='mb-3'>
+      <input
+        type='text'
+        class='form-control'
+        id='exampleInputEmail1'
+        aria-describedby='emailHelp'
+        name='user_email'
+        placeholder='Почта'
+        autocomplete='off'
+      />
+    </div>
+    <div class='mb-3'>
+      <input
+        type='password'
+        class='form-control'
+        id='exampleInputEmail1'
+        aria-describedby='emailHelp'
+        name='user_password'
+        placeholder='Пароль'
+        autocomplete='off'
+      />
+    </div>
+     <div class='mb-3'>
+      <input
+        type='password'
+        class='form-control'
+        id='exampleInputEmail1'
+        aria-describedby='emailHelp'
+        name='user_password_repeat'
+        placeholder='Повторите пароль'
+        autocomplete='off'
+      />
+    </div>
+
+    <div class='form-check form-switch'>
+      <input class='form-check-input' type='checkbox' role='switch' id='info' />
+      <label
+        class='form-check-label'
+        for='flexSwitchCheckDefault'
+      >Дополнительная информация</label>
+    </div>
+
+    <div id='tempInfo' style='display:none'>
+      <hr />
+      <div class='mb-3'>
+        <div style='display:flex; justify-content:space-bewteen'>
+          <select
+            class='form-select'
+            aria-label='Default select example'
+            name='user_sex'
+            required
+          >
+            <option selected>Пол</option>
+            <option value='Мужской'>Мужской</option>
+            <option value='Женский'>Женский</option>
+            <option value='Панда'>Панда</option>
+          </select>
+          <input
+            type='text'
+            class='form-control'
+            style='margin-left:10px'
+            id='exampleInputEmail1'
+            aria-describedby='emailHelp'
+            name='user_age'
+            placeholder='Возраст'
+            autocomplete='off'
+          />
+        </div>
+      </div>
+
+      <div class='mb-3'>
+        <div style='display:flex; justify-content:space-between'>
+          <input
+            type='text'
+            class='form-control'
+            id='exampleInputEmail1'
+            aria-describedby='emailHelp'
+            name='user_city'
+            placeholder='Город'
+            autocomplete='off'
+          />
+          <input
+            type='text'
+            class='form-control'
+            style='margin:0 15px'
+            id='exampleInputEmail1'
+            aria-describedby='emailHelp'
+            name='user_street'
+            placeholder='Улица'
+            autocomplete='off'
+          />
+          <input
+            type='number'
+            class='form-control'
+            id='exampleInputEmail1'
+            aria-describedby='emailHelp'
+            name='user_house'
+            placeholder='Дом'
+            autocomplete='off'
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class='form-check form-switch'>
+      <input
+        class='form-check-input'
+        type='checkbox'
+        role='switch'
+        id='admin'
+      />
+      <label
+        class='form-check-label'
+        for='flexSwitchCheckDefault'
+      >Зарегистрироваться как Админ</label>
+    </div>
+
+    <div class='mb-3' id='secretWord' style='display:none'>
+      <hr />
+      <input
+        type='text'
+        class='form-control'
+        aria-describedby='emailHelp'
+        name='user_secret_word'
+        placeholder='Секретное слово'
+        autocomplete='off'
+      />
+    </div>
+    <br />
+    <div style='display:flex; justify-content:center'>
+      <button
+        type='submit'
+        class='btn btn-outline-dark'
+      >Зарегистрироваться</button>
+    </div>
+  </form>
+</div>
+
+<div id='regError'>
+
+</div>

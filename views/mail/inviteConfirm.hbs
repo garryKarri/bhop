@@ -1,0 +1,27 @@
+<div style='display:flex; justify-content:center'>
+  <form
+    id='addForm'
+    action='/profile/add'
+    method='post'
+    enctype='multipart/form-data'
+    {{#if mailStatus}}
+      style='top:15.3%; width:60vh; margin:0px ;padding:0px; box-shadow: 2px 2px 50px 11px rgba(208, 244, 191, 0.571); position:fixed; z-index: 100; border-radius:10px'
+    {{else}}
+      style='top:15.3%; width:60vh; margin:0px ;padding:0px; box-shadow: 2px 2px 50px 11px rgba(245, 176, 164, 0.536); position:fixed; z-index: 100; border-radius:10px'
+    {{/if}}
+  >
+    <div 
+    {{#if mailStatus}}
+      class='alert alert-success' 
+    {{else}}
+      class='alert alert-danger'
+    {{/if}}
+    role='alert' style='margin:0; text-align:center'>
+      {{#if mailStatus}}
+      Вы подтвердили приглашение!
+      {{else}}
+      Приглашение отклонено!
+      {{/if}}
+    </div>
+  </form>
+</div>

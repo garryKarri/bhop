@@ -1,0 +1,24 @@
+<br />
+
+<div style='display:flex; justify-content:center'>
+  <form
+    id='addForm'
+    action='/profile/add'
+    method='post'
+    enctype='multipart/form-data'
+    style='width:60vh; padding:20px; box-shadow: 2px 2px 50px 11px rgba(34, 60, 80, 0.2); position:fixed; background-color:white; z-index: 100'
+  >
+    <div>
+      Вы уверены, что хотите удалить
+      <b>{{bar.bar_title}}</b>
+      из ваших избранных?
+    </div>
+    <br>
+    <br>
+    <br>
+    <div style='display:flex; justify-content:space-around'>
+      <button type='submit' class='btn btn-outline-dark'>Удалить</button>
+      <a id='cancelButton' class='btn btn-outline-dark'>Отменить</a>
+    </div>
+  </form>
+</div>

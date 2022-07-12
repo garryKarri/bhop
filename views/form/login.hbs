@@ -1,0 +1,49 @@
+<script defer src='/js/form/login.js'></script>
+
+<br>
+
+<div style='display:flex; justify-content:center'>
+  <form id='loginForm' method='post' action='/form/login' style='width:50vh'>
+    <div class='mb-3'>
+      <input
+        type='text'
+        class='form-control'
+        id='exampleInputEmail1'
+        aria-describedby='emailHelp'
+        name='user_email'
+        placeholder='Почта'
+        autocomplete='off'
+        required
+      />
+    </div>
+    <div class='mb-3'>
+      <input
+        type='password'
+        class='form-control'
+        id='exampleInputEmail1'
+        aria-describedby='emailHelp'
+        name='user_password'
+        placeholder='Пароль'
+        autocomplete='off'
+        required
+      />
+    </div>
+    <div style='display:flex; justify-content:space-between'>
+      <div style='display:flex; justify-content:center'>
+        <a href='/form/reg' class='btn btn-outline-dark'>Регистрация</a>
+      </div>
+
+      <div style='display:flex; justify-content:center'>
+        <button type='submit' class='btn btn-outline-dark'>Войти</button>
+      </div>
+
+      <div style='display:flex; justify-content:center'>
+        <a href='/form/forgot' class='btn btn-outline-dark'>Забыли пароль</a>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div id='loginError'>
+
+</div>

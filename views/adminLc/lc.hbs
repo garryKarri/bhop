@@ -1,0 +1,33 @@
+<script defer src='/js/admin/adminLc.js'></script>
+
+<div style='display:flex; flex-direction:column; text-align:center; width:100%'>
+  <br>
+  <div style='display:flex; justify-content:center'>
+    <div class='btn-group' role='group' aria-label='...'>
+      <a
+        id='adminShowUsers'
+        href='/admin/lc/users'
+        class='btn btn-outline-dark'
+      >Список авторизованных пользователей</a>
+      <a
+        id='adminShowProfile'
+        href='/admin/lc/profile/{{user_id}}'
+        class='btn btn-outline-dark'
+      >Изменить профиль</a>
+    </div>
+  </div>
+
+  <div id='alertForm'></div>
+  
+  <div id='makeAdminConfirm'></div>
+
+  <div id='adminInfoContainer'></div>
+
+  <div id='changePasswordFormContainer'></div>
+
+  <div id='adminUsersFavoritesContainer'></div>
+</div>
+
+<div>
+
+</div>

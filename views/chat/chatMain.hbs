@@ -1,0 +1,23 @@
+<script defer src="/js/chat/chat.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<link rel="stylesheet" href="/css/chat.css">
+
+<div
+  id='chatPageContainer'
+  style='margin:50px; display:flex; justify-content:center;'
+>
+  <div style='display:flex; flex-direction:column; height: 500px;; border:1px solid black; padding:20px; border-radius:5px;  box-shadow: 2px 2px 50px 11px rgba(34, 60, 80, 0.2); background-color:white; position:relative'>
+    <div id='overflowContainer' style="height:380px; overflow:auto">
+      <ul id='chatPageWindow' class='list-group' style='width:130vh; margin-bottom:30px;'>
+      </ul>
+    </div>
+    
+    <form id="chatMessageForm" method="get" action="/chat/message/{{user_id}}" style="width:130vh; position:absolute; bottom:0">
+      <hr>
+      <div class='mb-3' style='display:flex; justify-content:space-between'>
+        <input type='text' class='form-control' name='message' placeholder='Сообщение' autocomplete="off"/>
+        <button type='submit' class='btn btn-outline-dark' style="margin-left:25px">Отправить</button>
+      </div>
+    </form>
+  </div>
+</div>

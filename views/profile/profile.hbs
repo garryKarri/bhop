@@ -1,0 +1,100 @@
+<script defer src='/js/profile/profile.js'></script>
+<script
+  defer
+  src='https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=f634ce94-c551-453b-8ee5-e1c649d6d940'
+  type='text/javascript'
+></script>
+<link rel='stylesheet' href='/css/map.css' />
+
+<br />
+
+<div id='addFormContainer'></div>
+<div id='addPasswordContainer'></div>
+<div id="confirmJoinButton"></div>
+
+<div style='display:flex; justify-content:center'>
+  <div class='btn-group' role='group' aria-label='...'>
+    <a
+      id='userMailButton'
+      href='/profile/lc/mail/accept/{{user_id}}'
+      class='btn btn-outline-dark'
+    >Приглашения</a>
+    <a
+      id='userChangeButton'
+      href='/profile/lc/change/{{user_id}}'
+      class='btn btn-outline-dark'
+    >Изменить профиль</a>
+  </div>
+</div>
+
+<div id='mainMapRoutesContainer' class='invisible'>
+
+  <div
+    style='position:sticky; top:0; left:0; width:100%; height:100%; z-index:99; background-color:gray'
+  >
+    <div
+      style='width:90vh; padding:20px; box-shadow: 2px 2px 50px 11px rgba(34, 60, 80, 0.2); position:fixed; background-color:white; z-index: 100; left:27%; top: 20%; border-radius:5px;'
+    >
+      <div id='map' style='height:500px; overflow: auto'>
+
+      </div>
+
+      <br />
+
+      <div style='display: flex; justify-content: center'>
+        <a id='cancelButton' class='btn btn-outline-dark'>Отменить</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id='chagneConfirmContainer'></div>
+
+<div id='profileContainer' style='height:100%'>
+  <div style='display:flex; justify-content: center; flex-wrap: wrap'>
+    {{#each bars}}
+      <div
+        class='fullwrap'
+        style='box-shadow: 2px 2px 50px 11px rgba(34, 60, 80, 0.2); margin: 20px'
+      >
+        <img
+          src='/img/{{bar_photo_name}}'
+          style='width:500px; height:350px; object-fit:cover; border-radius:5px;'
+        />
+        <div
+          class='fullcap'
+          style='padding:10px; display:flex; flex-direction:column; justify-content:space-around'
+        >
+          <div style='font-size:40px'>{{bar_title}}</div>
+
+          <hr />
+
+          <div style='font-size:30px'>{{bar_type}}</div>
+
+          <br />
+
+          <div style='font-size:20px'>{{bar_city}}</div>
+          <div style='font-size:20px'>
+            {{bar_street}},
+            {{bar_house}}</div>
+
+          <div style='font-size:20px'>Средний чек: {{bar_price}}</div>
+
+          <br />
+
+          <div style='display:flex; justify-content:space-around'>
+            <a href='/map/routes/{{id}}' class='btn btn-outline-light'>Хочу
+              сюда!</a>
+            <a href='/profile/group/{{id}}' class='btn btn-outline-light'>Кто
+              пойдет?</a>
+            <a
+              href='/profile/delete/{{id}}'
+              class='btn btn-outline-light'
+            >Удалить из избранных</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

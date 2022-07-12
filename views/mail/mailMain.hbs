@@ -1,0 +1,52 @@
+<link rel='stylesheet' href='/css/mail.css' />
+<script defer src='/js/mail/mail.js'></script>
+
+<div id='inviteConfirmContainer'></div>
+
+<div
+  id='chatPageContainer'
+  style='margin:50px; display:flex; justify-content:center;'
+>
+  <div
+    style='display:flex; flex-direction:column; height: 500px;; border:1px solid black; padding:20px; border-radius:5px;  box-shadow: 2px 2px 50px 11px rgba(34, 60, 80, 0.2); background-color:white; position:relative'
+  >
+    <div id='overflowContainer' style='overflow:auto'>
+      <div style='display:flex; justify-content:center'>
+        <div
+          class='alert alert-secondary'
+          role='alert'
+          style='width:60vh; text-align: center;'
+        >
+          Новых приглашений:
+          <b>{{count}}</b>
+        </div>
+      </div>
+      <ul
+        id='chatPageWindow'
+        class='list-group list-group-flush'
+        style='width:130vh; margin-bottom:30px;'
+      >
+        {{#each usersList}}
+          <li
+            class='list-group-item'
+            style='display:flex; justify-content:space-between'
+          >
+            <div><b>{{user_name}}</b>
+              пригласил вас в
+              {{bar_type}}
+              <b>{{bar_title}}</b>
+            </div>
+            <div>Дата приглашения:
+              {{date}}
+              <a
+                href='/profile/lc/mail/delete/{{id}}'
+                class='btn btn-outline-dark'
+                style='margin: 0 25px'
+              >Подтвердить</a>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

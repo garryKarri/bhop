@@ -1,0 +1,20 @@
+<div style='display:flex; justify-content:center'>
+  <form
+    id='adminShowUserDelete'
+    action='/admin/lc/users/delete'
+    method='post'
+    enctype='multipart/form-data'
+    style='width:60vh; padding:20px; box-shadow: 2px 2px 50px 11px rgba(34, 60, 80, 0.2); position:fixed; background-color:white; z-index: 100'
+  >
+    <div>
+      Вы уверены, что хотите забанить
+      <b>{{user.user_name}}</b>?
+    </div>
+    <br>
+    <br>
+    <br>
+    <div style='display:flex; justify-content:space-around'>
+      <button type='submit' name='delete' class='btn btn-outline-dark'>Забанить</button>
+      <a id='cancelButton' class='btn btn-outline-dark'>Отменить</a>
+    </div>
+</div>

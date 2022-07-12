@@ -1,0 +1,8 @@
+#chatPageWindow > li:nth-child(odd) {
+  background: rgba(216, 211, 211, 0.363)
+}
+
+b {
+  font-size: 18px;
+}
+

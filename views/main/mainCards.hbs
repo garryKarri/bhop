@@ -1,0 +1,38 @@
+{{#each bars}}
+    <div
+      class='fullwrap'
+      style='box-shadow: 2px 2px 50px 11px rgba(34, 60, 80, 0.2); margin: 20px'
+    >
+      <img
+        src='/img/{{bar_photo_name}}'
+        style='width:500px; height:350px; object-fit:cover; border-radius:5px;'
+      />
+      <div
+        class='fullcap'
+        style='padding:10px; display:flex; flex-direction:column; justify-content:space-around'
+      >
+        <div style='font-size:40px'>{{bar_title}}</div>
+
+        <hr />
+
+        <div style='font-size:30px'>{{bar_type}}</div>
+
+        <br>
+
+        <div style='font-size:20px'>{{bar_city}}</div>
+        <div style='font-size:20px'>
+          {{bar_street}},
+          {{bar_house}}</div>
+
+        <div style='font-size:20px'>Средний чек: {{bar_price}}</div>
+
+        <br />
+
+        <div style='display:flex; justify-content:space-around'>
+          <a href='/map/routes/{{id}}' class='btn btn-outline-light'>Хочу сюда!</a>
+          <a href='/main/favorite/{{id}}' class='btn btn-outline-light'>Добавить
+            в избранное</a>
+        </div>
+      </div>
+    </div>
+  {{/each}}

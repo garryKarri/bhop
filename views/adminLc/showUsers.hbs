@@ -1,0 +1,88 @@
+<div
+  id='adminShowUsersContainer'
+  style='display:flex; justify-content:center; flex-wrap:wrap'
+>
+
+  {{!-- <div id='adminUsersFavoritesContainer'> --}}
+    {{!-- <div
+      style='position:sticky; top:0; left:0; width:100%; height:100%; z-index:99; background-color:gray'
+    >
+      <div
+        style='width:90vh; padding:20px; box-shadow: 2px 2px 50px 11px rgba(34, 60, 80, 0.2); position:fixed; background-color:white; z-index: 100; left:27%; top: 20%; border-radius:5px;'
+      >
+        <div id='usersFavoritesList' style='height:500px'>
+
+          
+
+        </div>
+        <br />
+        <div style='display: flex; justify-content: center'>
+          <a id='cancelButton4' class='btn btn-outline-dark'>Отменить</a>
+        </div>
+      </div>
+    </div> --}}
+  {{!-- </div> --}}
+
+  {{#each users}}
+    <div class='card' style='margin:20px;'>
+
+      <div
+        class='card'
+        style='width:60vh; border:1px solid black; padding:20px; border-radius:5px;  box-shadow: 2px 2px 50px 11px rgba(34, 60, 80, 0.2); background-color:white;'
+      >
+        <div class='card-body'>
+          <div style='display:flex; flex-direction:column; text-align:start'>
+            <h5 class='card-title'><b>{{user_name}}</b></h5>
+            <h6 class='card-subtitle mb-2 text-muted'>{{#if user_isAdmin}}
+                <b style='color:brown'>Админ</b>
+              {{else}}
+                <b style='color:rgb(0, 85, 57)'>Пользователь</b>
+              {{/if}}</h6>
+            <br />
+            <p class='card-text'>Почта: {{user_email}}</p>
+            <p class='card-text'>Пол: {{user_sex}}</p>
+            <p class='card-text'>Возраст: {{user_age}}</p>
+            <p class='card-text'>Город: {{user_city}}</p>
+            <p class='card-text'>Адрес:
+              {{user_street}}{{#if user_street}},{{/if}}
+              {{user_house}}</p>
+            <p class='card-text'>Зарегистрирован: {{createdAt}}</p>
+          </div>
+          <br />
+          <div style='display:flex; justify-content:center'>
+            {{#if user_isAdmin}}
+              <a
+                id='kickAdmin'
+                href='/admin/lc/users/adminOff/{{id}}'
+                class='btn btn-outline-dark'
+                style='margin:0 10px'
+              >Убрать права</a>
+            {{else}}
+              <a
+                id='makeAdmin'
+                href='/admin/lc/users/adminOn/{{id}}'
+                class='btn btn-outline-dark'
+                style='margin:0 10px'
+              >Дать права</a>
+            {{/if}}
+            <a
+              id='favorites'
+              href='/admin/lc/users/favorites/{{id}}'
+              class='btn btn-outline-dark'
+              style='margin:0 10px'
+            >Избранные</a>
+            <a
+              id='ban'
+              href='/admin/lc/users/delete/{{id}}'
+              class='btn btn-outline-dark'
+              style='margin:0 10px'
+            >Забанить</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  {{/each}}
+
+</div>

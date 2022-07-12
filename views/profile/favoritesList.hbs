@@ -1,0 +1,18 @@
+<h3>{{bar_type}} <b>{{bar_title}}</b> есть в избранных:</h3>
+
+<br />
+
+<ul id='usersFavoriteList' class='list-group list-group-flush'>
+  {{#each users}}
+    <li
+      class='list-group-item'
+      style='display:flex; justify-content:space-between'
+    >
+      <b>{{user_name}}</b>
+      <a
+          href='/profile/lc/mail/request/{{id}}/{{bar_id}}'
+          class='btn btn-outline-dark'
+        >Позвать</a>
+    </li>
+  {{/each}}
+</ul>
